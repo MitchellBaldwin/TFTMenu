@@ -15,6 +15,7 @@
 	#include "WProgram.h"
 #endif
 #include <TFT_eSPI.h>
+#include "DEBUG Macros.h"
 
 class MenuItemClass
 {
@@ -33,6 +34,8 @@ public:
 	typedef void (*MenuItemOnExecuteHandler)(byte);	// Function pointer for OnPress event handler
 
 protected:
+	char buf[8];
+
 	TFT_eSprite* canvas;
 	
 	uint16_t Xtl;
@@ -55,7 +58,8 @@ public:
 	MenuItemClass(String label, uint16_t xtl, uint16_t ytl, uint16_t width, uint16_t height, MenuItemTypes menuItemType = OffOn, MenuItemOnExecuteHandler onActivate = nullptr);
 
 	void Init(TFT_eSPI* tft);
-	virtual void Draw(TFT_eSPI* tft, bool isCurrent);
+	void Draw(TFT_eSPI* tft, bool isCurrent);
+	void DrawWithoutSprites(TFT_eSPI* tft, bool isCurrent);
 
 	void Activate(bool isActivated);
 
