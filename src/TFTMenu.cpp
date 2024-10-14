@@ -5,7 +5,6 @@
 *
 */
 #include "TFTMenu.h"
-//#include "DEBUG Macros.h"
 
 TFTMenuClass::TFTMenuClass(TFT_eSPI* parentTFT)
 {
@@ -45,12 +44,16 @@ bool TFTMenuClass::AddItem(MenuItemClass* item)
 	{
 		HighestItemIndex = 0;
 		Items[HighestItemIndex] = item;
+		_PP("HighestItemIndex: ")
+		_PL(HighestItemIndex)
 		return true;
 	}
 	if (HighestItemIndex < MAX_MENU_ITEMS - 1)
 	{
 		// OK to add a new menu item:
 		Items[++HighestItemIndex] = item;
+		_PP("HighestItemIndex: ")
+		_PL(HighestItemIndex)
 		return true;
 	}
 	else

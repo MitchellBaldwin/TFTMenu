@@ -29,12 +29,32 @@ void MenuItemClass::Init(TFT_eSPI* tft)
 
 void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 {
-	canvas->createSprite(Width, Height);
+	// Test code:
+	DrawWithoutSprites(tft, isCurrent);
+	return;
+	
+	try
+	{
+		canvas->createSprite(Width, Height);
 
-	// Erase background:
-	canvas->fillSprite(TFT_BLACK);
+		// Erase background:
+		if (canvas->created())
+		{
+			canvas->fillSprite(TFT_BLACK);
+		}
+		else
+		{
+			_PL("Sprite not created!");
+			return;
+		}
+	}
+	catch (const std::exception& ex)
+	{
+		_PL(ex.what())
+		return;
+	}
 
-	// Enclose in a box if this item is the current item:
+	// Highlight enclosing box if this item is the current item:
 	uint32_t boxColor = TFT_DARKGREY;
 	if (isCurrent)
 	{
