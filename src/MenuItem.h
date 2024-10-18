@@ -43,7 +43,6 @@ protected:
 	uint16_t Width;
 	uint16_t Height;
 	
-	String Label;
 	bool Activated = false;
 	
 	int MinValue = 0;
@@ -55,6 +54,8 @@ protected:
 	MenuItemOnExecuteHandler OnExecute = nullptr;
 
 public:
+	String Label;
+
 	MenuItemClass(String label, uint16_t xtl, uint16_t ytl, uint16_t width, uint16_t height, MenuItemTypes menuItemType = OffOn, MenuItemOnExecuteHandler onActivate = nullptr);
 
 	void Init(TFT_eSPI* tft);

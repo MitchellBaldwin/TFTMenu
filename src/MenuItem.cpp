@@ -29,9 +29,9 @@ void MenuItemClass::Init(TFT_eSPI* tft)
 
 void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 {
-	// Test code:
-	DrawWithoutSprites(tft, isCurrent);
-	return;
+	//// Test code:
+	//DrawWithoutSprites(tft, isCurrent);
+	//return;
 	
 	try
 	{
@@ -51,6 +51,7 @@ void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 	catch (const std::exception& ex)
 	{
 		_PL(ex.what())
+		_PL("Exception thrown creating Sprite")
 		return;
 	}
 
@@ -71,6 +72,9 @@ void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 	canvas->setTextDatum(TL_DATUM);
 	canvas->setTextSize(1);
 	canvas->drawString(Label, 2, 2, 1);
+
+	_PP("Drawing: ")
+	_PL(Label)
 
 	// Draw value, depending on type:
 	switch (MenuItemType)

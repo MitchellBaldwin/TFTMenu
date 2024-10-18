@@ -14,6 +14,7 @@ TFT_eSPI tft = TFT_eSPI();
 
 #include <TFTMenu.h>
 MenuItemClass* item1 = new MenuItemClass("Power", 20, 20, 64, 12);
+MenuItemClass* item2 = new MenuItemClass("Nav", 20, 32, 64, 12);
 TFTMenuClass mainMenu(&tft);
 
 void setup()
@@ -21,8 +22,9 @@ void setup()
 	Serial.begin(115200);
 
 	tft.init();
-	tft.setRotation(1);
+	tft.setRotation(3);
 	
+	_PP("Display extents: ")
 	_PP(tft.width())
 	_PP("x")
 	_PL(tft.height())
@@ -44,14 +46,17 @@ void setup()
 	tft.drawString("Testing TFTMenu", tft.width() / 2, 2);
 
 	// Build an example menu:
-	//mainMenu.Init(&tft);
+	//mainMenu.Init(&tft);	// Do not reinitialize; Init() is called from the constructor!
 
 	item1->Init(&tft);
 	item1->Draw(&tft, true);
+	item2->Init(&tft);
+	item2->Draw(&tft, false);
 
 	mainMenu.AddItem(item1);
+	mainMenu.AddItem(item2);
 
-	//mainMenu.Draw();
+	mainMenu.Draw();
 
 }
 

@@ -24,7 +24,7 @@ void TFTMenuClass::Init(TFT_eSPI* parentTFT)
 	//rendered, though.  Creating a dummy menu item before the 'real' ones are added allows
 	//the forst real menu item to display properly.
 
-	MenuItemClass* dummy = new MenuItemClass("", 0, 0, 10, 10);
+	MenuItemClass* dummy = new MenuItemClass("dummy", 0, 0, 10, 10);
 	dummy->Init(tft);
 	AddItem(dummy);
 
@@ -45,15 +45,21 @@ bool TFTMenuClass::AddItem(MenuItemClass* item)
 		HighestItemIndex = 0;
 		Items[HighestItemIndex] = item;
 		_PP("HighestItemIndex: ")
-		_PL(HighestItemIndex)
+		_PP(HighestItemIndex)
+		_PP(" (")
+		_PP(item->Label)
+		_PL(")")
 		return true;
 	}
-	if (HighestItemIndex < MAX_MENU_ITEMS - 1)
+	else if (HighestItemIndex < MAX_MENU_ITEMS - 1)
 	{
 		// OK to add a new menu item:
 		Items[++HighestItemIndex] = item;
 		_PP("HighestItemIndex: ")
-		_PL(HighestItemIndex)
+		_PP(HighestItemIndex)
+		_PP(" (")
+		_PP(item->Label)
+		_PL(")")
 		return true;
 	}
 	else
@@ -124,4 +130,3 @@ void TFTMenuClass::ExecuteCurrentItem()
 {
 	Items[CurrentItemIndex]->InvokeOnExecuteHandler();
 }
-

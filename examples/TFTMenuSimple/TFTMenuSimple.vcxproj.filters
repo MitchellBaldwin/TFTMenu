@@ -14,37 +14,37 @@
       <Extensions>xml;json;txt;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="src">
-      <UniqueIdentifier>{841704db-c251-46a9-8db0-083c3034a204}</UniqueIdentifier>
+      <UniqueIdentifier>{8c72c274-e376-4868-a88b-ca3c550db7c2}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly">
-      <UniqueIdentifier>{47078c53-7868-4df1-96ad-14f17432576a}</UniqueIdentifier>
+      <UniqueIdentifier>{5ae9c9b2-f133-46da-9790-acb1aea0e40e}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\core">
-      <UniqueIdentifier>{6fd38197-70b6-4032-b835-4c76f103ed59}</UniqueIdentifier>
+      <UniqueIdentifier>{53b9bba6-ade2-4ad1-9933-7ce3d9a64ef2}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\core\apps">
-      <UniqueIdentifier>{5fded8da-ab4a-4aa1-af69-6c1a3b8d97af}</UniqueIdentifier>
+      <UniqueIdentifier>{2ef204c4-44d2-46b4-9e16-0369b14ac4bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\core\apps\sntp">
-      <UniqueIdentifier>{2e58348c-4078-4227-a856-e5a6d9982bdc}</UniqueIdentifier>
+      <UniqueIdentifier>{bb882944-bcd7-40de-b6cc-a5a3a9cd7d28}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\core\libb64">
-      <UniqueIdentifier>{5abbd031-f6b8-4257-8416-f1ad49506d07}</UniqueIdentifier>
+      <UniqueIdentifier>{561c204a-6af5-46f7-bfbc-bc7544a83c86}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\libraries">
-      <UniqueIdentifier>{3ad44366-22e8-4491-ae15-3ec70141cd63}</UniqueIdentifier>
+      <UniqueIdentifier>{7f3f6e15-692f-408f-a6b8-4366cdc2ccc6}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\libraries\TFT_eSPI">
-      <UniqueIdentifier>{d8274983-e29d-4209-9ca6-bcee7242b6af}</UniqueIdentifier>
+      <UniqueIdentifier>{7de75ff9-5360-4c39-b4c0-ec73704124b3}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\libraries\SPI">
-      <UniqueIdentifier>{490727dc-3e04-479a-982d-fc063277f997}</UniqueIdentifier>
+      <UniqueIdentifier>{de806600-2b05-4151-b4de-0faf26d40e46}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\libraries\FS">
-      <UniqueIdentifier>{26e5ebab-e17b-428f-b174-ee075b155cd3}</UniqueIdentifier>
+      <UniqueIdentifier>{e8762048-10e6-4906-a21a-dc2a06e65a96}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\_micro-api-readonly\libraries\SPIFFS">
-      <UniqueIdentifier>{335f7c5a-a158-40aa-a6ea-2d625054d9c2}</UniqueIdentifier>
+      <UniqueIdentifier>{da84e7db-5977-4747-b7f5-2f084ec7ad0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
