@@ -73,6 +73,7 @@ void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 	canvas->setTextSize(1);
 	canvas->drawString(Label, 2, 2, 1);
 
+	// Test code:
 	_PP("Drawing: ")
 	_PL(Label)
 

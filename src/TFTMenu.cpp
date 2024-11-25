@@ -44,22 +44,28 @@ bool TFTMenuClass::AddItem(MenuItemClass* item)
 	{
 		HighestItemIndex = 0;
 		Items[HighestItemIndex] = item;
+		
+		//Test code:
 		_PP("HighestItemIndex: ")
 		_PP(HighestItemIndex)
 		_PP(" (")
 		_PP(item->Label)
 		_PL(")")
+
 		return true;
 	}
 	else if (HighestItemIndex < MAX_MENU_ITEMS - 1)
 	{
 		// OK to add a new menu item:
 		Items[++HighestItemIndex] = item;
+
+		//Test code:
 		_PP("HighestItemIndex: ")
 		_PP(HighestItemIndex)
 		_PP(" (")
 		_PP(item->Label)
 		_PL(")")
+		
 		return true;
 	}
 	else
