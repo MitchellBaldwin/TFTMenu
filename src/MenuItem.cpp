@@ -29,9 +29,9 @@ void MenuItemClass::Init(TFT_eSPI* tft)
 
 void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 {
-	//// Test code:
-	//DrawWithoutSprites(tft, isCurrent);
-	//return;
+	// Test code:
+	DrawWithoutSprites(tft, isCurrent);
+	return;
 	
 	try
 	{
