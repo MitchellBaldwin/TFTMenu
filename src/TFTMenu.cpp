@@ -6,6 +6,11 @@
 */
 #include "TFTMenu.h"
 
+TFTMenuClass::TFTMenuClass()
+{
+	tft = nullptr;
+}
+
 TFTMenuClass::TFTMenuClass(TFT_eSPI* parentTFT)
 {
 	Init(parentTFT);
@@ -45,12 +50,12 @@ bool TFTMenuClass::AddItem(MenuItemClass* item)
 		HighestItemIndex = 0;
 		Items[HighestItemIndex] = item;
 		
-		//Test code:
-		_PP("HighestItemIndex: ")
-		_PP(HighestItemIndex)
-		_PP(" (")
-		_PP(item->Label)
-		_PL(")")
+		////Test code:
+		//_PP("HighestItemIndex: ")
+		//_PP(HighestItemIndex)
+		//_PP(" (")
+		//_PP(item->Label)
+		//_PL(")")
 
 		return true;
 	}
@@ -59,12 +64,12 @@ bool TFTMenuClass::AddItem(MenuItemClass* item)
 		// OK to add a new menu item:
 		Items[++HighestItemIndex] = item;
 
-		//Test code:
-		_PP("HighestItemIndex: ")
-		_PP(HighestItemIndex)
-		_PP(" (")
-		_PP(item->Label)
-		_PL(")")
+		////Test code:
+		//_PP("HighestItemIndex: ")
+		//_PP(HighestItemIndex)
+		//_PP(" (")
+		//_PP(item->Label)
+		//_PL(")")
 		
 		return true;
 	}

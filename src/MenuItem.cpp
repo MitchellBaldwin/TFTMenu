@@ -14,7 +14,7 @@ MenuItemClass::MenuItemClass(String label, uint16_t xtl, uint16_t ytl, uint16_t 
 	Ytl = ytl;
 	Width = width;
 	Height = height;
-	onActivate = onActivate;
+	OnExecute = onActivate;
 }
 
 void MenuItemClass::Init(TFT_eSPI* tft)
@@ -22,17 +22,6 @@ void MenuItemClass::Init(TFT_eSPI* tft)
 	//_PL("Initializing MenuItem");
 
 	canvas = new TFT_eSprite(tft);
-	//_PP("canvas created: ")
-	//_PL(canvas->created())
-	//DrawWithoutSprites(tft, false);
-}
-
-void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
-{
-	// Test code:
-	DrawWithoutSprites(tft, isCurrent);
-	return;
-	
 	try
 	{
 		canvas->createSprite(Width, Height);
@@ -55,6 +44,17 @@ void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 		return;
 	}
 
+	//_PP("canvas created: ")
+	//_PL(canvas->created())
+	//DrawWithoutSprites(tft, false);
+}
+
+void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
+{
+	// Test code:
+	DrawWithoutSprites(tft, isCurrent);
+	return;
+	
 	// Highlight enclosing box if this item is the current item:
 	uint32_t boxColor = TFT_DARKGREY;
 	if (isCurrent)
@@ -73,9 +73,9 @@ void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 	canvas->setTextSize(1);
 	canvas->drawString(Label, 2, 2, 1);
 
-	// Test code:
-	_PP("Drawing: ")
-	_PL(Label)
+	//// Test code:
+	//_PP("Drawing: ")
+	//_PL(Label)
 
 	// Draw value, depending on type:
 	switch (MenuItemType)
@@ -106,7 +106,7 @@ void MenuItemClass::Draw(TFT_eSPI* tft, bool isCurrent)
 		break;
 	}
 	canvas->pushSprite(Xtl, Ytl);
-	canvas->deleteSprite();
+	//canvas->deleteSprite();
 
 }
 

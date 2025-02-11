@@ -15,7 +15,7 @@ TFT_eSPI tft = TFT_eSPI();
 #include <TFTMenu.h>
 MenuItemClass* item1 = new MenuItemClass("Power", 20, 20, 64, 12);
 MenuItemClass* item2 = new MenuItemClass("Nav", 20, 32, 64, 12);
-TFTMenuClass mainMenu(&tft);
+TFTMenuClass mainMenu;
 
 void setup()
 {
@@ -46,12 +46,12 @@ void setup()
 	tft.drawString("Testing TFTMenu", tft.width() / 2, 2);
 
 	// Build an example menu:
-	//mainMenu.Init(&tft);	// Do not reinitialize; Init() is called from the constructor!
+	mainMenu.Init(&tft);	// Do not reinitialize; Init() is called from the constructor! <- this turned out to be a problem, resulting in guru meditation error(s)
 
 	item1->Init(&tft);
-	item1->Draw(&tft, true);
+	//item1->Draw(&tft, true);
 	item2->Init(&tft);
-	item2->Draw(&tft, false);
+	//item2->Draw(&tft, false);
 
 	mainMenu.AddItem(item1);
 	mainMenu.AddItem(item2);

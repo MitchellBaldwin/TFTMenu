@@ -28,6 +28,7 @@ protected:
 	TFT_eSPI* tft;
 
 public:
+	TFTMenuClass();
 	TFTMenuClass(TFT_eSPI* parentTFT);
 
 	void Init(TFT_eSPI* parentTFT);
