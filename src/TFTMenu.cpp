@@ -39,7 +39,10 @@ void TFTMenuClass::Draw()
 {
 	for (byte i = 1; i <= HighestItemIndex; ++i)
 	{
-		Items[i]->Draw(tft, (i == CurrentItemIndex) ? true : false);
+		if (Items[i] != nullptr)
+		{
+			Items[i]->Draw(tft, (i == CurrentItemIndex) ? true : false);
+		}
 	}
 }
 
