@@ -179,15 +179,29 @@ void MenuItemClass::SetMinValue(int minValue)
 
 void MenuItemClass::SetValue(int value)
 {
-	if (value < MinValue)
-	{
-		value = MinValue;
-	}
-	if (value > MaxValue)
-	{
-		value = MaxValue;
-	}
 	Value = value;
+	if (Value < MinValue)
+	{
+		if (WrapNumericValue)
+		{
+			Value = MaxValue;
+		}
+		else
+		{
+			Value = MinValue;
+		}
+	}
+	if (Value > MaxValue)
+	{
+		if (WrapNumericValue)
+		{
+			Value = MinValue;
+		}
+		else
+		{
+			Value = MaxValue;
+		}
+	}
 }
 
 void MenuItemClass::SetMaxValue(int maxValue)

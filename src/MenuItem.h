@@ -31,7 +31,7 @@ public:
 	};
 	MenuItemTypes MenuItemType = Action;
 
-	typedef void (*MenuItemOnExecuteHandler)(byte);	// Function pointer for OnPress event handler
+	typedef void (*MenuItemOnExecuteHandler)(int);	// Function pointer for OnPress event handler
 
 protected:
 	char buf[8];
@@ -44,6 +44,7 @@ protected:
 	uint16_t Height;
 	
 	bool Activated = false;
+	bool WrapNumericValue = true;
 	
 	int MinValue = 0;
 	int Value = 0;

@@ -107,6 +107,7 @@ MenuItemClass* TFTMenuClass::GetCurrentItem()
 MenuItemClass* TFTMenuClass::PrevItem()
 {
 	MenuItemClass* item = Items[CurrentItemIndex];
+	item->Activate(false);
 	item->Draw(tft, false);
 	//_PL(CurrentItemIndex)
 	if (CurrentItemIndex == 1)
@@ -126,6 +127,7 @@ MenuItemClass* TFTMenuClass::PrevItem()
 MenuItemClass* TFTMenuClass::NextItem()
 {
 	MenuItemClass* item = Items[CurrentItemIndex];
+	item->Activate(false);
 	item->Draw(tft, false);
 	if (++CurrentItemIndex > HighestItemIndex)
 	{
